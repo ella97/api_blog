@@ -24,7 +24,11 @@ class BlogController extends Controller
      */
     public function create()
     {
-       return view('hello');
+       $variable = 'from controller'; 
+       $blog = new Blog();
+       $blog->title = 'Blog title';
+       $array = ['Nuwy', 'John', 10, 10.5];
+       return view('hello', compact('variable', 'blog', 'array'));
     }
 
     /**
